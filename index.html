@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PIXELFORGE — студія сайтів, дизайну та ШІ-контенту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;600;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5fa;--bg2:#fff;--tx:#0c1020;--mu:#586080;--bd:#d9deeb;--a:#4f46ff;--b:#00a8c6;--g:#12b76a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070a14;--bg2:#0f1424;--tx:#eaf0ff;--mu:#8f9ab8;--bd:#1f2742;--a:#7c78ff;--b:#2ee6ff;--g:#3ddc97;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#070a14;--bg2:#0f1424;--tx:#eaf0ff;--mu:#8f9ab8;--bd:#1f2742;--a:#7c78ff;--b:#2ee6ff;--g:#3ddc97;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Manrope,system-ui,Arial,sans-serif;line-height:1.6;overflow-x:hidden;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:56px 56px;background-attachment:fixed}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0,transparent,var(--bg) 75%);pointer-events:none;z-index:0}
+main,nav,footer{position:relative;z-index:1}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.15;margin:0}
+a{color:inherit;text-decoration:none}
+.m{font-family:"JetBrains Mono",monospace}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:17px}
+.logo i{display:inline-block;width:9px;height:18px;background:var(--b);vertical-align:-3px;margin-left:3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--mu)}
+nav ul a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:700;font-size:15px;border:1px solid var(--bd);background:var(--bg2);transition:.25s}
+.btn.p{background:var(--a);color:#fff;border-color:var(--a);box-shadow:0 10px 30px -12px var(--a)}
+.btn:hover{transform:translateY(-2px)}
+.hero{padding:80px 0 60px}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;padding:7px 14px;border:1px solid var(--bd);border-radius:8px;font-size:12px;color:var(--mu);background:var(--bg2);margin-bottom:22px}
+.tag:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g)}
+.hero h1{font-size:clamp(30px,5vw,56px)}
+.hero p{color:var(--mu);font-size:18px;margin:22px 0 30px;max-width:540px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.stat{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;padding:18px}
+.stat b{font-family:Unbounded,sans-serif;font-size:26px;display:block}
+.stat span{color:var(--mu);font-size:13px}
+.term{background:#0a0e1c;border:1px solid var(--bd);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px -30px var(--a);color:#cfd8ff}
+.th{display:flex;gap:6px;align-items:center;padding:10px 14px;background:#121830;font-size:12px;color:#8f9ab8}
+.th i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.th i:nth-child(2){background:#febc2e}.th i:nth-child(3){background:#28c840}.th span{margin-left:8px}
+.tb{padding:16px;font-size:13px;line-height:1.8;min-height:230px}
+.tb .c{color:#7c78ff}.tb .s{color:#3ddc97}.tb .o{color:#8f9ab8}
+section{padding:72px 0}
+.sh{margin-bottom:36px}.sh small{color:var(--a);font-family:"JetBrains Mono",monospace;font-size:13px}
+.sh h2{font-size:clamp(24px,3.6vw,38px);margin-top:8px;max-width:720px}
+.sh p{color:var(--mu);max-width:620px;margin:12px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:18px;padding:24px;transition:.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-5px);border-color:var(--a)}
+.card .n{font-family:"JetBrains Mono",monospace;color:var(--b);font-size:12px}
+.card h3{font-size:16px;margin:10px 0}.card p{margin:0;color:var(--mu);font-size:14px}
+.card ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.card li{font-family:"JetBrains Mono",monospace;font-size:11px;padding:4px 9px;border:1px solid var(--bd);border-radius:6px;color:var(--mu)}
+/* reel */
+.reel{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bd);border-radius:20px;overflow:hidden;background:var(--bg2);box-shadow:0 30px 70px -40px var(--a)}
+.reel .term{border:0;border-radius:0;box-shadow:none}
+.pv{padding:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--a) 14%,var(--bg2)),var(--bg2));display:flex;flex-direction:column;gap:12px;justify-content:center;min-height:280px}
+.pv>*{opacity:0;transform:translateY(10px);transition:.5s}.pv>.on{opacity:1;transform:none}
+.pv .nv{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800}
+.pv .nv span{width:60px;height:8px;border-radius:9px;background:var(--bd)}
+.pv h4{font-family:Unbounded,sans-serif;font-size:clamp(16px,2.4vw,24px);margin:0}
+.pv .ln{height:8px;border-radius:9px;background:var(--bd);width:70%}
+.pv .bt{width:fit-content;background:var(--a);color:#fff;padding:8px 18px;border-radius:9px;font-size:12px;font-weight:800}
+.pv .cs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pv .cs i{height:54px;border-radius:10px;border:1px solid var(--bd);background:var(--bg2)}
+.pv .sc{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--g)}
+.rc{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:12px 16px;border-top:1px solid var(--bd);font-size:12px;color:var(--mu)}
+.rc button{width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer}
+.pr{flex:1;height:5px;border-radius:9px;background:var(--bd);overflow:hidden}.pr i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));transition:width .6s}
+/* team */
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.exp ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px;color:var(--mu)}
+.exp li b{color:var(--tx)}.exp li:before{content:"✓ ";color:var(--g);font-weight:800}
+.mem{display:flex;gap:16px;align-items:flex-start;background:var(--bg2);border:1px solid var(--bd);border-radius:18px;padding:18px;margin-bottom:14px}
+.av{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--a),var(--b));flex:none}
+.mem h3{font-size:15px}.mem p{margin:2px 0 8px;color:var(--mu);font-size:13px}.mem em{font-style:normal;color:var(--b);font-size:12px;font-family:"JetBrains Mono",monospace}
+/* slider */
+.slide{min-width:100%;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;background:var(--bg2);border:1px solid var(--bd);border-radius:24px;padding:26px}
+.track{display:flex;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.mock{border-radius:14px;overflow:hidden;border:1px solid var(--bd);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.bar{height:26px;background:#141a30;display:flex;gap:6px;align-items:center;padding:0 12px}
+.bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar span{margin-left:10px;font-size:10px;color:#8f9ab8;font-family:"JetBrains Mono",monospace}
+.scr{aspect-ratio:16/10;padding:6% 7%;color:#fff;position:relative;display:flex;flex-direction:column;gap:9px;overflow:hidden}
+.scr .nv{display:flex;justify-content:space-between;align-items:center;font-size:clamp(8px,1.2vw,12px);font-weight:800}
+.scr .nv u{display:flex;gap:8px;text-decoration:none}.scr .nv u b{width:26px;height:5px;border-radius:9px;background:#fff6}
+.scr h4{font-family:Unbounded,sans-serif;font-size:clamp(14px,2.5vw,25px);margin:auto 0 0;max-width:65%;line-height:1.15}
+.scr p{margin:0;font-size:clamp(8px,1.1vw,12px);opacity:.8;max-width:50%}
+.scr .pl{width:fit-content;background:var(--ac);color:#111;font-weight:800;font-size:clamp(8px,1.1vw,11px);padding:6px 14px;border-radius:8px}
+.scr .cs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:6px}.scr .cs i{height:clamp(22px,4.4vw,46px);border-radius:8px;background:#ffffff1f;border:1px solid #ffffff30}
+.orb{position:absolute;right:-6%;top:12%;width:40%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--ac),transparent 70%);opacity:.9}
+.info small{color:var(--mu);font-family:"JetBrains Mono",monospace;font-size:11px}
+.info h3{font-size:22px;margin:8px 0 10px}.info p{color:var(--mu);margin:0 0 14px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.chips span{font-family:"JetBrains Mono",monospace;font-size:11px;padding:5px 10px;border-radius:6px;border:1px solid var(--bd)}
+.res{font-family:Unbounded,sans-serif;font-size:17px}
+.ctrl{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+.dots{display:flex;gap:8px}.dots button{width:10px;height:10px;border-radius:99px;border:0;background:var(--bd);cursor:pointer;transition:.3s;padding:0}.dots button.on{width:32px;background:var(--a)}
+.arr{display:flex;gap:10px}.arr button{width:46px;height:46px;border-radius:12px;border:1px solid var(--bd);background:var(--bg2);color:var(--tx);font-size:17px;cursor:pointer}.arr button:hover{background:var(--a);color:#fff}
+/* stack */
+.mq{overflow:hidden;border-block:1px solid var(--bd);background:var(--bg2);padding:16px 0}
+.mq div{display:flex;gap:42px;width:max-content;animation:mv 28s linear infinite;font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mu)}
+@keyframes mv{to{transform:translateX(-50%)}}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+details{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:800}details p{color:var(--mu);margin:10px 0 0}
+.cta{text-align:center;background:var(--bg2);border:1px solid var(--a);border-radius:28px;padding:56px 22px;box-shadow:0 0 80px -30px var(--a)}
+.cta h2{font-size:clamp(24px,4vw,40px);max-width:700px;margin:0 auto 14px}
+.cta p{color:var(--mu);max-width:500px;margin:0 auto 28px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{padding:30px 0;color:var(--mu);font-size:13px;text-align:center;border-top:1px solid var(--bd);background:var(--bg)}
+.rv{opacity:0;transform:translateY(24px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){nav ul{display:none}.hero .w,.exp,.slide,.reel{grid-template-columns:1fr}.grid,.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid,.steps{grid-template-columns:1fr}.hero{padding-top:50px}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<nav><div class="w"><a class="logo" href="#top">PIXELFORGE<i></i></a>
+<ul><li><a href="#services">Послуги</a></li><li><a href="#reel">Розробка</a></li><li><a href="#works">Роботи</a></li><li><a href="#team">Команда</a></li><li><a href="#faq">Питання</a></li></ul>
+<a class="btn p" href="#contact" style="padding:9px 18px">Написати</a></div></nav>
+<main>
+<header class="hero" id="top"><div class="w"><div>
+<span class="tag m">приймаємо нові проєкти · листопад 2026</span>
+<h1>Куємо цифрові продукти <span class="grad">з точністю до пікселя</span></h1>
+<p>Сайти, банери, візитки, прев’ю, ретуш фото та ШІ-контент. Над кожним проєктом працюють фахівці з 3–5 роками практики: самі проєктуємо, самі кодимо, самі відповідаємо за результат.</p>
+<div class="row"><a class="btn p" href="#works">Дивитися роботи →</a><a class="btn" href="#reel">Як ми працюємо</a></div></div>
+<div class="term m"><div class="th"><i></i><i></i><i></i><span>pixelforge — ~/projects</span></div>
+<div class="tb" id="ht"></div></div></div>
+<div class="w"><div class="stats" style="grid-column:1/-1">
+<div class="stat"><b class="grad">3–5</b><span>роки досвіду у кожного</span></div>
+<div class="stat"><b class="grad">45+</b><span>завершених проєктів</span></div>
+<div class="stat"><b class="grad">2–4 тиж</b><span>типовий термін сайту</span></div>
+<div class="stat"><b class="grad">90+</b><span>оцінка Lighthouse</span></div></div></div></header>
+
+<div class="mq"><div id="mq"></div></div>
+
+<section id="services"><div class="w">
+<div class="sh rv"><small>// 01 послуги</small><h2>Усе для бренду в одному місці</h2><p>Один підрядник замість п’яти: дизайн, код і візуал виходять в одному стилі.</p></div>
+<div class="grid" id="sv"></div></div></section>
+
+<section id="reel"><div class="w">
+<div class="sh rv"><small>// 02 під капотом</small><h2>Як виглядає розробка зсередини</h2><p>Скорочена версія нашого процесу: від першого рядка коду до запуску. Реальні відеозаписи робочого процесу покажемо на зустрічі.</p></div>
+<div class="reel rv"><div class="term m"><div class="th"><i></i><i></i><i></i><span>index.html</span></div><div class="tb" id="rc"></div></div>
+<div class="pv" id="pv"><div class="nv"><b>brand</b><span></span></div><h4>Ваш сайт, який працює на бізнес</h4><div class="ln"></div><div class="bt">Залишити заявку</div><div class="cs"><i></i><i></i><i></i></div><div class="sc m">✓ Lighthouse: 96 · швидкість 1,2 с</div></div>
+<div class="rc m"><button id="pp" aria-label="Пауза">❚❚</button><div class="pr"><i id="pb"></i></div><span id="tc">00:00</span></div></div>
+</div></section>
+
+<section id="works"><div class="w">
+<div class="sh rv"><small>// 03 портфоліо</small><h2>Проєкти, якими ми пишаємось</h2><p>Невеликі та середні бізнеси, для яких сайт став інструментом продажів.</p></div>
+<div class="rv"><div style="overflow:hidden;border-radius:24px"><div class="track" id="track"></div></div>
+<div class="ctrl"><div class="dots" id="dots"></div><div class="arr"><button id="prev" aria-label="Назад">←</button><button id="next" aria-label="Вперед">→</button></div></div></div>
+</div></section>
+
+<section id="team"><div class="w exp">
+<div class="rv"><div class="sh" style="margin-bottom:0"><small>// 04 команда</small><h2>Досвід, який видно в деталях</h2></div>
+<ul><li><b>3–5 років практики</b> у кожного, а не «універсальні» новачки.</li><li><b>Без передачі стажерам:</b> проєкт веде той, хто його продав.</li><li><b>Прозорі терміни та ціна</b>, зафіксовані до початку роботи.</li><li><b>Правки включені</b>: допрацьовуємо, поки вам не сподобається.</li></ul></div>
+<div class="rv"><div class="mem"><div class="av">VL</div><div><h3>Vlad — арт-директор</h3><p>Веб-дизайн, UX, брендинг, банери та прев’ю</p><em>5 років · Figma · Photoshop</em></div></div>
+<div class="mem"><div class="av">VT</div><div><h3>Vitos — провідний розробник</h3><p>Frontend, інтернет-магазини, інтеграції та ШІ-інструменти</p><em>4 роки · React · Next.js</em></div></div>
+<div class="mem"><div class="av">+</div><div><h3>Команда спеціалістів</h3><p>Ретушери, моушн-дизайнери та промпт-інженери під задачі проєкту</p><em>3+ роки у кожного</em></div></div></div>
+</div></section>
+
+<section id="process"><div class="w">
+<div class="sh rv"><small>// 05 процес</small><h2>Чотири кроки від ідеї до запуску</h2></div>
+<div class="steps" id="st"></div></div></section>
+
+<section id="faq"><div class="w" style="max-width:820px">
+<div class="sh rv"><small>// 06 питання</small><h2>Відповідаємо наперед</h2></div>
+<details><summary>Скільки коштує сайт?</summary><p>Залежить від обсягу. Після короткого брифу в Telegram називаємо точну суму та фіксуємо її до початку роботи.</p></details>
+<details><summary>За який час ви робите проєкт?</summary><p>Лендінг зазвичай 1–2 тижні, багатосторінковий сайт або магазин 3–4 тижні. Візитки, банери та прев’ю робимо за 1–3 дні.</p></details>
+<details><summary>Чи можна замовити лише банери чи ретуш?</summary><p>Так. Окремі задачі беремо без сайту: банери, візитки, прев’ю, ретуш фото та ШІ-візуал.</p></details>
+<details><summary>Що після запуску?</summary><p>Допомагаємо з хостингом і доменом, навчаємо, як редагувати сайт, і лишаємось на зв’язку для правок та підтримки.</p></details>
+</div></section>
+
+<section id="contact"><div class="w"><div class="cta rv">
+<h2>Розкажіть про задачу, а ми запропонуємо рішення</h2>
+<p>Напишіть у Telegram: коротко опишіть, що потрібно, і ми відповімо з орієнтовними термінами та вартістю.</p>
+<div class="row"><a class="btn p" href="https://t.me/Vlaad22" target="_blank" rel="noopener">✈ @Vlaad22</a><a class="btn p" href="https://t.me/vitosgg" target="_blank" rel="noopener">✈ @vitosgg</a></div></div></div></section>
+</main>
+<footer><div class="w m">© 2026 PIXELFORGE · сайти, дизайн та ШІ-контент</div></footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+// stack marquee
+var stk=['Figma','Photoshop','React','Next.js','HTML/CSS','JavaScript','After Effects','Midjourney','Stable Diffusion','Illustrator','Tilda','Telegram-боти'];
+$('mq').innerHTML=stk.concat(stk).map(function(s){return '<span>'+s+'</span>'}).join('');
+// services
+var sv=[['🌐','Розробка сайтів','Лендінги, корпоративні сайти та інтернет-магазини. Швидко, адаптивно, з акцентом на заявки.',['сайти','магазини','SEO']],['🎯','Банери та реклама','Креативи для соцмереж і таргету, набори під різні формати.',['Meta','Google','Telegram Ads']],['💳','Візитки та брендбук','Логотип, фірмовий стиль, візитки та макети до друку.',['лого','візитки','гайдлайн']],['🖼️','Прев’ю та обкладинки','Прев’ю для YouTube, Telegram і подкастів в єдиному стилі.',['YouTube','Telegram','Shorts']],['📸','Обробка фото','Ретуш, колірна корекція, видалення фону для каталогів і маркетплейсів.',['ретуш','колір','каталог']],['🤖','ШІ-контент','Зображення, відео та аватари на нейромережах з ручним доопрацюванням.',['ШІ-фото','ШІ-відео','аватари']]];
+$('sv').innerHTML=sv.map(function(s,i){return '<div class="card rv"><div class="n">0'+(i+1)+' / '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p><ul>'+s[3].map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul></div>'}).join('');
+var ps=[['Бриф','Обговорюємо задачі, аудиторію та цілі. Називаємо терміни й бюджет.'],['Прототип','Показуємо структуру та дизайн-напрямок, погоджуємо стиль.'],['Розробка','Верстаємо, програмуємо, тестуємо. Показуємо проміжні результати.'],['Запуск','Публікуємо, навчаємо та лишаємось на зв’язку для підтримки.']];
+$('st').innerHTML=ps.map(function(s,i){return '<div class="card rv"><div class="n">крок 0'+(i+1)+'</div><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>'}).join('');
+// hero terminal
+var hl=['<span class="o">$</span> npm create pixelforge@latest','<span class="s">✓</span> дизайн-система готова','<span class="s">✓</span> компоненти зібрано: 24','<span class="s">✓</span> зображення оптимізовано','<span class="o">$</span> npm run build','<span class="c">Lighthouse</span> perf <span class="s">96</span> · seo <span class="s">100</span>','<span class="s">✓ деплой завершено за 41 с</span>'],hi=0,ht=$('ht');
+function hs(){if(hi>=hl.length){setTimeout(function(){hi=0;ht.innerHTML='';hs()},3500);return}ht.innerHTML+=hl[hi++]+'<br>';setTimeout(hs,750)}hs();
+// dev reel
+var rl=[['&lt;nav class="top"&gt;…&lt;/nav&gt;',0],['&lt;h1&gt;Ваш сайт, що працює&lt;/h1&gt;',1],['&lt;p class="lead"&gt;…&lt;/p&gt;',2],['&lt;a class="btn"&gt;Заявка&lt;/a&gt;',3],['&lt;section class="cards"&gt;…&lt;/section&gt;',4],['<span class="o">/* оптимізація: lazy-load, webp */</span>',4],['<span class="s">$ build · ok</span>',5]],ri=0,pause=false,rc=$('rc'),pv=$('pv'),pc=pv.children;
+function rs(){if(pause)return setTimeout(rs,300);if(ri>=rl.length){if(ri++>rl.length+3){ri=0;rc.innerHTML='';[].forEach.call(pc,function(e){e.className=e.className.replace(' on','')})}$('pb').style.width='100%';return setTimeout(rs,700)}
+rc.innerHTML+='<span class="c">'+(ri+1)+'</span>  '+rl[ri][0]+'<br>';pc[rl[ri][1]].classList.add('on');ri++;$('pb').style.width=ri/rl.length*100+'%';var s=ri*5;$('tc').textContent='00:'+(s<10?'0':'')+s;setTimeout(rs,900)}rs();
+$('pp').onclick=function(){pause=!pause;this.textContent=pause?'▶':'❚❚'};
+// projects
+var P=[['Barber House','Beauty · сайт з онлайн-записом','#1b1b1f','#d4a84b','Стиль без черги','Сайт барбершопу з каталогом послуг, вибором майстра та записом у кілька кліків.',['UX/UI','онлайн-запис','SEO'],'+34% записів за 2 місяці'],
+['Sneaker Lab','E-commerce · інтернет-магазин','#0b1830','#2ee6ff','Кросівки, які шукають','Магазин із фільтрами за розміром і брендом, швидким кошиком та оплатою онлайн.',['магазин','фільтри','оплата'],'Конверсія 1,4% → 2,3%'],
+['DentCare','Медицина · лендінг клініки','#06303a','#3ddc97','Посмішка без страху','Лендінг стоматології: послуги, лікарі, відгуки та форма запису на консультацію.',['лендінг','фото','SEO'],'×2 заявок із сайту'],
+['Kava&Co','Брендинг · кав’ярня','#2a160c','#f0a95d','Кава з характером','Логотип, меню, візитки та односторінковий сайт кав’ярні в єдиному стилі.',['брендинг','візитки','сайт'],'Бренд за 3 тижні'],
+['Lumen Studio','Фото · сайт і ретуш','#190f30','#b48cff','Світло, що продає','Сайт фотостудії з галереєю та ретушшю знімків для каталогу.',['ретуш','галерея','швидкість'],'Завантаження за 1,1 с'],
+['Nova Content','ШІ-контент · e-commerce','#0a1f3d','#7c78ff','Каталог без зйомок','300 карток товарів із ШІ-зображеннями в єдиному стилі з ручною доробкою.',['ШІ-контент','ретуш','каталог'],'−60% витрат на зйомку']];
+var tr=$('track'),dt=$('dots'),n=P.length,cur=0,tm;
+tr.innerHTML=P.map(function(p){return '<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i><span>'+p[0].toLowerCase().replace(/[^a-z]/g,'')+'.ua</span></div><div class="scr" style="--ac:'+p[3]+';background:linear-gradient(135deg,'+p[2]+',color-mix(in srgb,'+p[2]+' 60%,'+p[3]+'))"><div class="orb"></div><div class="nv"><b>'+p[0]+'</b><u><b></b><b></b><b></b></u></div><h4>'+p[4]+'</h4><p>'+p[5].split('.')[0]+'.</p><span class="pl">Дізнатись більше</span><div class="cs"><i></i><i></i><i></i></div></div></div><div class="info"><small>'+p[1]+'</small><h3>'+p[0]+'</h3><p>'+p[5]+'</p><div class="chips">'+p[6].map(function(t){return '<span>'+t+'</span>'}).join('')+'</div><div class="res grad">'+p[7]+'</div></div></div>'}).join('');
+P.forEach(function(_,k){var b=document.createElement('button');b.setAttribute('aria-label','Слайд '+(k+1));b.onclick=function(){go(k)};dt.appendChild(b)});
+function go(x){cur=(x+n)%n;tr.style.transform='translateX(-'+cur*100+'%)';[].forEach.call(dt.children,function(e,j){e.className=j===cur?'on':''});clearInterval(tm);tm=setInterval(function(){go(cur+1)},6000)}
+$('prev').onclick=function(){go(cur-1)};$('next').onclick=function(){go(cur+1)};
+var sx=0;tr.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});tr.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});go(0);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+[].forEach.call(document.querySelectorAll('.rv'),function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
