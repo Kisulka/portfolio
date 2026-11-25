@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PIXELFORGE — студія сайтів, дизайну та ШІ-контенту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5fb;--bg2:#ffffff;--tx:#14121f;--mu:#625f75;--bd:#e2e0ee;--a:#6d4aff;--b:#00b8d9;--c:#ff4f9a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0912;--bg2:#13111f;--tx:#f4f2ff;--mu:#9d9ab5;--bd:#25223a;--a:#8f73ff;--b:#2ee6ff;--c:#ff5fa8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0912;--bg2:#13111f;--tx:#f4f2ff;--mu:#9d9ab5;--bd:#25223a;--a:#8f73ff;--b:#2ee6ff;--c:#ff5fa8;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Manrope,system-ui,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:Unbounded,Manrope,system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:inherit;text-decoration:none}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+.grad{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 75%,transparent);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--mu)}
+nav ul a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;font-size:15px;border:1px solid var(--bd);transition:.25s}
+.btn.p{background:linear-gradient(120deg,var(--a),var(--c));color:#fff;border:0;box-shadow:0 10px 30px -10px var(--a)}
+.btn:hover{transform:translateY(-2px)}
+.hero{position:relative;padding:90px 0 70px;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:480px;height:480px;border-radius:50%;filter:blur(110px);opacity:.35;z-index:0}
+.hero:before{background:var(--a);top:-160px;left:-120px}.hero:after{background:var(--c);right:-140px;top:40px}
+.hero .w{position:relative;z-index:1}
+.tag{display:inline-block;padding:7px 16px;border:1px solid var(--bd);border-radius:999px;font-size:13px;color:var(--mu);background:var(--bg2);margin-bottom:24px}
+.hero h1{font-size:clamp(32px,6vw,64px);max-width:880px}
+.hero p{max-width:600px;color:var(--mu);font-size:18px;margin:24px 0 32px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.stat{background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:22px}
+.stat b{font-family:Unbounded,sans-serif;font-size:30px;display:block}
+.stat span{color:var(--mu);font-size:14px}
+section{padding:80px 0}
+.sh{margin-bottom:40px}.sh small{color:var(--a);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+.sh h2{font-size:clamp(26px,4vw,40px);margin-top:10px;max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:24px;padding:28px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--a)}
+.ic{font-size:30px;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--a) 25%,transparent),color-mix(in srgb,var(--c) 25%,transparent));margin-bottom:18px}
+.card h3{font-size:17px;margin-bottom:10px}.card p{margin:0;color:var(--mu);font-size:15px}
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.exp ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+.exp li{display:flex;gap:14px;align-items:flex-start;color:var(--mu)}
+.exp li b{color:var(--tx)}.exp li i{font-style:normal;color:var(--b);font-weight:800}
+.team{display:grid;gap:16px}
+.mem{display:flex;gap:18px;align-items:center;background:var(--bg2);border:1px solid var(--bd);border-radius:22px;padding:20px}
+.av{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--a),var(--c));flex:none}
+.mem h3{font-size:16px}.mem p{margin:2px 0 0;color:var(--mu);font-size:14px}
+.mem em{font-style:normal;color:var(--b);font-size:13px;font-weight:700}
+/* slider */
+.sl{position:relative}
+.track{display:flex;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.slide{min-width:100%;display:grid;grid-template-columns:1.35fr 1fr;gap:32px;align-items:center;background:var(--bg2);border:1px solid var(--bd);border-radius:28px;padding:28px}
+.mock{border-radius:16px;overflow:hidden;border:1px solid var(--bd);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.bar{height:26px;background:#1b1930;display:flex;gap:6px;align-items:center;padding:0 12px}
+.bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.scr{aspect-ratio:16/10;padding:8%;color:#fff;position:relative;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden}
+.scr h4{font-family:Unbounded,sans-serif;font-size:clamp(14px,2.6vw,26px);margin:0;max-width:70%;line-height:1.15}
+.scr p{margin:0;font-size:clamp(9px,1.2vw,13px);opacity:.8;max-width:55%}
+.scr .pill{align-self:flex-start;background:#fff;color:#111;font-weight:800;font-size:clamp(8px,1.1vw,12px);padding:6px 14px;border-radius:99px}
+.orb{position:absolute;right:-8%;top:50%;width:48%;aspect-ratio:1;border-radius:50%;transform:translateY(-50%);opacity:.9}
+.orb2{position:absolute;right:12%;bottom:8%;width:22%;aspect-ratio:1;border-radius:22%;transform:rotate(18deg);opacity:.75}
+.info small{color:var(--mu);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.info h3{font-size:24px;margin:8px 0 12px}.info p{color:var(--mu);margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips span{font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;border:1px solid var(--bd)}
+.res{font-family:Unbounded,sans-serif;font-size:20px}
+.ctrl{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+.dots{display:flex;gap:8px}.dots button{width:10px;height:10px;border-radius:99px;border:0;background:var(--bd);cursor:pointer;transition:.3s;padding:0}
+.dots button.on{width:34px;background:linear-gradient(90deg,var(--a),var(--c))}
+.arr{display:flex;gap:10px}.arr button{width:48px;height:48px;border-radius:50%;border:1px solid var(--bd);background:var(--bg2);color:var(--tx);font-size:18px;cursor:pointer;transition:.2s}
+.arr button:hover{background:var(--a);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.steps .card:before{counter-increment:s;content:"0" counter(s);font-family:Unbounded,sans-serif;font-size:34px;display:block;margin-bottom:14px;background:linear-gradient(90deg,var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta{text-align:center;background:linear-gradient(135deg,var(--a),var(--c));border-radius:36px;padding:64px 24px;color:#fff}
+.cta h2{font-size:clamp(26px,4.5vw,44px);max-width:720px;margin:0 auto 16px}
+.cta p{opacity:.9;max-width:520px;margin:0 auto 32px}
+.cta .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta .btn{background:#fff;color:#14121f;border:0;font-size:17px;padding:16px 30px}
+footer{padding:36px 0;color:var(--mu);font-size:14px;text-align:center;border-top:1px solid var(--bd)}
+.rv{opacity:0;transform:translateY(28px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){nav ul{display:none}.grid,.steps{grid-template-columns:1fr 1fr}.exp,.slide{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid,.steps{grid-template-columns:1fr}.hero{padding-top:56px}section{padding:56px 0}}
+</style>
+</head>
+<body>
+<nav><div class="w"><a class="logo" href="#top">PIXEL<span class="grad">FORGE</span></a>
+<ul><li><a href="#services">Послуги</a></li><li><a href="#team">Команда</a></li><li><a href="#works">Роботи</a></li><li><a href="#process">Процес</a></li></ul>
+<a class="btn p" href="#contact" style="padding:10px 20px">Написати</a></div></nav>
+
+<header class="hero" id="top"><div class="w">
+<span class="tag">✦ Студія цифрового дизайну · працюємо з 2021 року</span>
+<h1>Створюємо сайти та візуал, що <span class="grad">продають за вас</span></h1>
+<p>Сайти, банери, візитки, прев’ю, ретушування фото та ШІ-контент. За кожним проєктом стоять фахівці з досвідом 3–5 років практики — без стажерів і без сюрпризів.</p>
+<a class="btn p" href="#works">Дивитися роботи →</a> <a class="btn" href="#contact">Обговорити проєкт</a>
+<div class="stats">
+<div class="stat"><b class="grad">3–5</b><span>роки досвіду у кожного</span></div>
+<div class="stat"><b class="grad">120+</b><span>реалізованих проєктів</span></div>
+<div class="stat"><b class="grad">98%</b><span>клієнтів повертаються</span></div>
+<div class="stat"><b class="grad">7 дн</b><span>середній термін запуску</span></div>
+</div></div></header>
+
+<section id="services"><div class="w">
+<div class="sh rv"><small>Що ми робимо</small><h2>Усе для вашого бренду в одному місці</h2></div>
+<div class="grid">
+<div class="card rv"><div class="ic">🌐</div><h3>Розробка сайтів</h3><p>Лендінги, інтернет-магазини, корпоративні портали. Швидко, адаптивно, з упором на конверсію.</p></div>
+<div class="card rv"><div class="ic">🎯</div><h3>Банери та реклама</h3><p>Креативи для соцмереж, таргету та контексту, що чіпляють погляд і підвищують CTR.</p></div>
+<div class="card rv"><div class="ic">💳</div><h3>Візитки та брендбук</h3><p>Фірмовий стиль, логотип, візитки та носії — образ вашого бізнесу, що запам’ятовується.</p></div>
+<div class="card rv"><div class="ic">🖼️</div><h3>Прев’ю та обкладинки</h3><p>Клікабельні прев’ю для YouTube, Telegram і подкастів в єдиній фірмовій стилістиці.</p></div>
+<div class="card rv"><div class="ic">📸</div><h3>Обробка фото</h3><p>Ретуш, кольорокорекція, видалення фону, предметна зйомка для каталогів і маркетплейсів.</p></div>
+<div class="card rv"><div class="ic">🤖</div><h3>ШІ-контент</h3><p>Зображення, відео, аватари та тексти на нейромережах, доведені вручну до студійної якості.</p></div>
+</div></div></section>
+
+<section id="team"><div class="w exp">
+<div class="rv"><div class="sh" style="margin-bottom:0"><small>Досвід вирішує</small><h2>Працюють лише фахівці з 3–5 роками практики</h2></div>
+<ul>
+<li><i>✓</i><span><b>Стаж кожного — від 3 до 5 років.</b> Ми вже набили шишки на своїх проєктах, і ви за це не платите.</span></li>
+<li><i>✓</i><span><b>Без передачі стажерам.</b> Проєкт веде той, хто його продав.</span></li>
+<li><i>✓</i><span><b>Прозорі терміни та ціна.</b> Фіксуємо домовленості до початку робіт.</span></li>
+<li><i>✓</i><span><b>Правки включені.</b> Доопрацьовуємо, поки ви не скажете «вау».</span></li></ul></div>
+<div class="team rv">
+<div class="mem"><div class="av">V</div><div><h3>Vlad — арт-директор</h3><p>Веб-дизайн, UX, брендинг</p><em>5 років в індустрії</em></div></div>
+<div class="mem"><div class="av" style="background:linear-gradient(135deg,var(--b),var(--a))">VG</div><div><h3>Vitos — провідний розробник</h3><p>Frontend, e-commerce, ШІ-інтеграції</p><em>4 роки в індустрії</em></div></div>
+<div class="mem"><div class="av" style="background:linear-gradient(135deg,var(--c),var(--b))">+</div><div><h3>Команда майстрів</h3><p>Ретушери, моушн-дизайнери, промпт-інженери</p><em>3+ роки у кожного</em></div></div>
+</div></div></section>
+
+<section id="works"><div class="w">
+<div class="sh rv"><small>Портфоліо</small><h2>Проєкти, якими ми пишаємося</h2></div>
+<div class="sl rv"><div style="overflow:hidden;border-radius:28px"><div class="track" id="track">
+
+<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:linear-gradient(135deg,#1a1147,#5b34ff 70%,#00c2ff)"><span class="pill">NEOBANK</span><h4>Гроші без кордонів і комісій</h4><p>Картка, перекази та інвестиції в одному застосунку.</p><span class="pill" style="width:fit-content">Відкрити рахунок</span><div class="orb" style="background:radial-gradient(circle at 30% 30%,#7df9ff,#5b34ff)"></div><div class="orb2" style="background:#fff"></div></div></div>
+<div class="info"><small>Фінтех · Лендінг</small><h3>NeoBank</h3><p>Лендінг, що продає, з анімованою 3D-карткою та калькулятором тарифів.</p><div class="chips"><span>UX/UI</span><span>React</span><span>Анімації</span></div><div class="res grad">+212% заявок</div></div></div>
+
+<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:linear-gradient(135deg,#2b0a1a,#ff4f9a 75%,#ffb36b)"><span class="pill">AURA STORE</span><h4>Мода, що говорить за вас</h4><p>Нова колекція осінь–зима вже в наявності.</p><span class="pill" style="width:fit-content">До каталогу</span><div class="orb" style="background:radial-gradient(circle at 30% 30%,#fff,#ff4f9a)"></div><div class="orb2" style="background:#ffd1a0"></div></div></div>
+<div class="info"><small>E-commerce · Інтернет-магазин</small><h3>Aura Store</h3><p>Інтернет-магазин одягу зі швидким каталогом, фільтрами та оплатою в один клік.</p><div class="chips"><span>Магазин</span><span>Платежі</span><span>SEO</span></div><div class="res grad">×3,4 виручка</div></div></div>
+
+<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:linear-gradient(135deg,#04210f,#12c26b 70%,#c6ff4d)"><span class="pill">PULSE FIT</span><h4>Тренуйся розумніше щодня</h4><p>Персональні програми та трекер прогресу.</p><span class="pill" style="width:fit-content">Почати безкоштовно</span><div class="orb" style="background:radial-gradient(circle at 30% 30%,#e9ffb0,#12c26b)"></div><div class="orb2" style="background:#fff"></div></div></div>
+<div class="info"><small>Фітнес · Сайт і застосунок</small><h3>Pulse Fit</h3><p>Сайт мережі клубів з онлайн-записом, особистим кабінетом і промороликами.</p><div class="chips"><span>Вебзастосунок</span><span>Брендинг</span><span>Відео</span></div><div class="res grad">12 000 підписників за місяць</div></div></div>
+
+<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:linear-gradient(135deg,#050b1f,#2146ff 60%,#9b5cff)"><span class="pill">NOVA AI</span><h4>Нейромережа, що працює на вас</h4><p>Генерація зображень, відео та текстів за секунди.</p><span class="pill" style="width:fit-content">Спробувати</span><div class="orb" style="background:conic-gradient(from 90deg,#00e5ff,#9b5cff,#ff4f9a,#00e5ff)"></div><div class="orb2" style="background:#fff"></div></div></div>
+<div class="info"><small>ШІ-платформа · Продукт</small><h3>Nova AI</h3><p>Сайт ШІ-сервісу з живою демонстрацією, особистим кабінетом і контентом, створеним нейромережами.</p><div class="chips"><span>ШІ-контент</span><span>Next.js</span><span>Motion</span></div><div class="res grad">40 000 реєстрацій</div></div></div>
+
+<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:linear-gradient(135deg,#1c1407,#c9902b 70%,#fff0c2)"><span class="pill">FORMA ESTATE</span><h4>Дім, у якому хочеться жити</h4><p>Преміальна нерухомість з віртуальними турами.</p><span class="pill" style="width:fit-content">Підібрати квартиру</span><div class="orb" style="background:radial-gradient(circle at 30% 30%,#fff7da,#c9902b)"></div><div class="orb2" style="background:#fff"></div></div></div>
+<div class="info"><small>Нерухомість · Корпоративний сайт</small><h3>Forma Estate</h3><p>Преміальний сайт забудовника з каталогом, 3D-турами та ретушшю фотографій об’єктів.</p><div class="chips"><span>Каталог</span><span>Ретуш фото</span><span>3D</span></div><div class="res grad">+168% звернень</div></div></div>
+
+<div class="slide"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:linear-gradient(135deg,#12001f,#7a1cff 55%,#ff2e63)"><span class="pill">DRIFT ESPORTS</span><h4>Турнір, який запам’ятається</h4><p>Призовий фонд 5 млн. Реєстрація відкрита.</p><span class="pill" style="width:fit-content">Взяти участь</span><div class="orb" style="background:radial-gradient(circle at 30% 30%,#ffb0d0,#ff2e63)"></div><div class="orb2" style="background:#2ee6ff"></div></div></div>
+<div class="info"><small>Кіберспорт · Промосайт</small><h3>Drift Esports</h3><p>Промосайт турніру, комплект банерів, прев’ю для стрімів і візитки організаторів.</p><div class="chips"><span>Сайт</span><span>Банери</span><span>Прев’ю</span></div><div class="res grad">3 млн охоплення</div></div></div>
+
+</div></div>
+<div class="ctrl"><div class="dots" id="dots"></div><div class="arr"><button id="prev" aria-label="Назад">←</button><button id="next" aria-label="Вперед">→</button></div></div></div>
+</div></section>
+
+<section id="process"><div class="w">
+<div class="sh rv"><small>Як ми працюємо</small><h2>Чотири кроки від ідеї до результату</h2></div>
+<div class="steps">
+<div class="card rv"><h3>Бриф</h3><p>Обговорюємо завдання, аудиторію та цілі. Даємо чесну оцінку термінів і бюджету.</p></div>
+<div class="card rv"><h3>Концепт</h3><p>Показуємо дизайн-напрямок і погоджуємо стиль до початку розробки.</p></div>
+<div class="card rv"><h3>Створення</h3><p>Розробляємо, тестуємо й показуємо проміжні результати.</p></div>
+<div class="card rv"><h3>Запуск</h3><p>Публікуємо, навчаємо й залишаємося на зв’язку для підтримки.</p></div>
+</div></div></section>
+
+<section id="contact"><div class="w"><div class="cta rv">
+<h2>Готові зробити щось по-справжньому круте?</h2>
+<p>Напишіть нам у Telegram — відповімо швидко та запропонуємо рішення під ваше завдання.</p>
+<div class="row"><a class="btn" href="https://t.me/Vlaad22" target="_blank" rel="noopener">✈ @Vlaad22</a><a class="btn" href="https://t.me/vitosgg" target="_blank" rel="noopener">✈ @vitosgg</a></div>
+</div></div></section>
+
+<footer><div class="w">© 2026 PIXELFORGE · Сайти, дизайн та ШІ-контент</div></footer>
+
+<script>
+(function(){
+var t=document.getElementById('track'),n=t.children.length,i=0,d=document.getElementById('dots'),timer;
+for(var k=0;k<n;k++){var b=document.createElement('button');b.setAttribute('aria-label','Слайд '+(k+1));(function(k){b.onclick=function(){go(k)}})(k);d.appendChild(b)}
+function go(x){i=(x+n)%n;t.style.transform='translateX(-'+i*100+'%)';[].forEach.call(d.children,function(e,j){e.className=j===i?'on':''});clearInterval(timer);timer=setInterval(function(){go(i+1)},5500)}
+document.getElementById('prev').onclick=function(){go(i-1)};
+document.getElementById('next').onclick=function(){go(i+1)};
+var sx=0;t.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+t.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)go(i+(dx<0?1:-1))});
+go(0);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+[].forEach.call(document.querySelectorAll('.rv'),function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
